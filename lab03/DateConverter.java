@@ -16,11 +16,11 @@ public class DateConverter {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-
         int month, dateInMonth, daysInMonth;
         month = 1;
         daysInMonth = 31;
-        while (dayOfYear > daysInMonth) {
+        while (dayOfYear >daysInMonth) {
+            month++;
             // TODO: Here is one place to put assignment statements.
             if (month == 2) {
                 daysInMonth = 28;
@@ -30,7 +30,11 @@ public class DateConverter {
                 daysInMonth = 31;
             }
             // TODO: Here is another possible place to put assignment statements.
+            // System.out.println(dayOfYear);
+            // System.out.println(daysInMonth);
+            dayOfYear = dayOfYear - daysInMonth;
         }
+        // System.out.println(dayOfYear);
         dateInMonth = dayOfYear;
         System.out.println(month + "/" + dateInMonth);
     }
